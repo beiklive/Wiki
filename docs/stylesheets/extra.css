@@ -1,5 +1,30 @@
 @font-face {
-    font-family: "<font>";
-    src: "camingocode.ttf";
-  }
+    font-family: "camingocode";
+    src: "./camingocode.ttf";
+}
+:root {
+
+    --md-code-font: "camingocode"; 
+}
   
+.md-footer__inner{
+    height: 4rem;
+}
+
+.md-footer__link{
+    padding-top: 1rem;
+}
+
+.md-sidebar{
+    width: 10rem;
+}
+
+.md-typeset code{
+    font-size: 1em;
+}
+
+.md-nav__item label{
+    font-size: 1.1em;
+    font-family: "camingocode";
+    margin-left: -0.7em;
+}

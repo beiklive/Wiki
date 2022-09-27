@@ -2,7 +2,7 @@ site_name: 杰宝的Wiki
 site_description: 杰宝的Wiki
 copyright: Copyright © 2022
 site_url: https://wiki.beiklive.top/
-repo_url: https://github.com/Ohto-Ai/blog
+repo_url: https://github.com/beiklive/Wiki
 site_description: Blog for beiklive
 site_author: beiklive
 
@@ -36,9 +36,9 @@ theme:
   logo: img/favicon.svg
   favicon: img/favicon.svg
   language: zh
-  font:
-    text: Roboto
-    code: Roboto Mono
+  # font:
+  #   text: Roboto
+  #   code: Roboto Mono
 
   include_search_page: false
   search_index_only: true
