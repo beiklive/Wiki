@@ -4,26 +4,25 @@
 
 
 
-# makefile项目模板地址
+## makefile项目模板地址
 > [https://github.com/beiklive/Linux_CPP_Template](https://github.com/beiklive/Linux_CPP_Template)
 
-# Linux安装高版本gcc,g++
-## 添加相应的源
+## Linux安装高版本gcc,g++
+### 添加相应的源
 ```bash
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
-## 更新软件源
+### 更新软件源
 ```bash
 sudo apt-get update
 ```
-## 安装
+### 安装
 ```bash
 sudo apt-get install gcc-11 g++-11
 ```
 
-# TCP
-> Server
-```c
+## Socket通信模板
+```c title="server.cpp" linenums="1"
 #include<stdio.h>
 #include<string.h>    
 #include<stdlib.h>    
@@ -118,8 +117,7 @@ int main(int argc , char *argv[])
 }
 
 ```
-> Client
-```c
+```c title="client.cpp" linenums="1"
 #include<stdio.h>
 #include<string.h> 
 #include <fcntl.h>
@@ -175,7 +173,7 @@ int main(int argc , char *argv[])
 
 ```
 
-# git钩子
+## git钩子
 
 ```c
 #include <iostream>
@@ -208,7 +206,7 @@ int main(){
 >
 > 运行：nohup ./main 2>&1 &
 
-# std::unique_lock
+## std::unique_lock
 
 unique_lock类里维护了一个mutex对象。在unique_lock类拥有多个构造函数，这里只放两个本文涉及的构造函数。
 
@@ -246,7 +244,7 @@ explicit unique_lock(mutex_type& __m)
 
 ```
 
-## 使用方法一
+### 使用方法一
 
 手动加解锁。直接看代码。
 
@@ -281,7 +279,7 @@ int main ()
 
 需要注意的是，这里要加std::defer_lock参数。这样会调用第二个构造函数，不对mutex进行加锁操作。后面由自己手动操作。好处是可以自己选择需要加解锁的代码段。
 
-## 使用方法二
+### 使用方法二
 
 这里做了一些改动，让unique_lock在构造时加锁，析构时解锁。为了确定需要加解锁的代码段，我们用{}花括号把代码段括起来。
 
@@ -318,13 +316,13 @@ int main ()
 
 ```
 
-# std::condition_variable
+## std::condition_variable
 
 条件变量提供了两类操作：wait和notify。这两类操作构成了多线程同步的基础。
 
 使用条件变量可以在任务队列为空时CPU暂停轮询减少耗费CPU资源。
 
-## wait
+### wait
 
 wait是线程的等待动作，直到其它线程将其唤醒后，才会继续往下执行。
 
@@ -350,7 +348,7 @@ void wait(unique_lock<mutex> &lock, Predicate pred) {
 }
 ```
 
-## notify
+### notify
 
 了解了wait，notify就简单多了：唤醒wait在该条件变量上的线程。notify有两个版本：notify_one和notify_all。
 
@@ -368,13 +366,13 @@ cv.notify_all(lock)
 
 
 
-# 面试准备
+## 面试准备
 
 进程是系统资源分配的基本单位。
 
 线程是进程的子任务，是CPU调度的最小单位，共享同一片地址空间。
 
-## 进程间通信
+### 进程间通信
 
 1. 管道： 数据是单向的，相互通信需要创建两个管道。无格式的字节流数据。
 2. 消息队列：内核中，内存中的消息链表， 
@@ -383,7 +381,7 @@ cv.notify_all(lock)
 5. 信号： SIGNAL()   异步通信
 6. socket： 不同主机间的进程通信
 
-## 线程间通信
+### 线程间通信
 
 1. 互斥量
 2. 信号量

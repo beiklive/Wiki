@@ -19,9 +19,7 @@
 
 ## 代码第一版
 
-`.h`
-
-```c
+```C++ title="ThreadPool.h"
 #ifndef _BPOOL_H__
 #define _BPOOL_H__
 
@@ -53,10 +51,8 @@ public:
 
 ```
 
-`.cpp`
-
-```c
-#include "bpool.h"
+```C++ title="ThreadPool.cpp"
+#include "ThreadPool.h"
 
 bpool::bpool(int num_threads) : stop(false)
 {

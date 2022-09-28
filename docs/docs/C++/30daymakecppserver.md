@@ -70,7 +70,7 @@ Contribute
 
 贡献代码请到[pine](https://github.com/yuesong-feng/pine)项目，这是本教程开发的网络库，也是最新的代码版本。
 
-# day01-从一个最简单的socket开始
+## day01-从一个最简单的socket开始
 
 如果读者之前有计算机网络的基础知识那就更好了，没有也没关系，socket编程非常容易上手。但本教程主要偏向实践，不会详细讲述计算机网络协议、网络编程原理等。想快速入门可以看以下博客，讲解比较清楚、错误较少：
 
@@ -202,7 +202,7 @@ new client fd 3! IP: 127.0.0.1 Port: 53505
 
 
 
-# day02-不要放过任何一个错误
+## day02-不要放过任何一个错误
 
 在上一天，我们写了一个客户端发起socket连接和一个服务器接受socket连接。然而对于`socket`,`bind`,`listen`,`accept`,`connect`等函数，我们都设想程序完美地、没有任何异常地运行，而这显然是不可能的，不管写代码水平多高，就算你是林纳斯，也会在程序里写出bug。
 
@@ -350,7 +350,7 @@ server socket disconnected!
 
 
 
-# day03-高并发还得用epoll
+## day03-高并发还得用epoll
 
 在上一天，我们写了一个简单的echo服务器，但只能同时处理一个客户端的连接。但在这个连接的生命周期中，绝大部分时间都是空闲的，活跃时间（发送数据和接收数据的时间）占比极少，这样独占一个服务器是严重的资源浪费。事实上所有的服务器都是高并发的，可以同时为成千上万个客户端提供服务，这一技术又被称为IO复用。
 
@@ -460,7 +460,7 @@ while(true){    //由于使用非阻塞IO，需要不断读取，直到全部读
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day03](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day03)
 
-# day04-来看看我们的第一个类
+## day04-来看看我们的第一个类
 
 在上一天，我们开发了一个支持多个客户端连接的服务器，但到目前为止，虽然我们的程序以`.cpp`结尾，本质上我们写的仍然是C语言程序。虽然C++语言完全兼容C语言并且大部分程序中都是混用，但一个很好的习惯是把C和C++看作两种语言，写代码时需要清楚地知道自己在写C还是C++。
 
@@ -572,7 +572,7 @@ util.h
 
 
 
-# day05-epoll高级用法-Channel登场
+## day05-epoll高级用法-Channel登场
 
 在上一天，我们已经完整地开发了一个echo服务器，并且引入面向对象编程的思想，初步封装了`Socket`、`InetAddress`和`Epoll`，大大精简了主程序，隐藏了底层语言实现细节、增加了可读性。
 
@@ -669,7 +669,7 @@ while(true){
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day05](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day05)
 
-# day06-服务器与事件驱动核心类登场
+## day06-服务器与事件驱动核心类登场
 
 在上一天，我们为每一个添加到epoll的文件描述符都添加了一个`Channel`，用户可以自由注册各种事件、很方便地根据不同事件类型设置不同回调函数（在当前的源代码中只支持了目前所需的可读事件，将在之后逐渐进行完善）。我们的服务器已经基本成型，但目前从新建socket、接受客户端连接到处理客户端事件，整个程序结构是顺序化、流程化的，我们甚至可以使用一个单一的流程图来表示整个程序。而流程化程序设计的缺点之一是不够抽象，当我们的服务器结构越来越庞大、功能越来越复杂、模块越来越多，这种顺序程序设计的思想显然是不能满足需求的。
 
@@ -748,7 +748,7 @@ public:
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day06](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day06)
 
-# day07-为我们的服务器添加一个Acceptor
+## day07-为我们的服务器添加一个Acceptor
 
 在上一天，我们分离了服务器类和事件驱动类，将服务器逐渐开发成Reactor模式。至此，所有服务器逻辑（目前只有接受新连接和echo客户端发来的数据）都写在`Server`类里。但很显然，`Server`作为一个服务器类，应该更抽象、更通用，我们应该对服务器进行进一步的模块化。
 
@@ -829,7 +829,7 @@ acceptor->setNewConnectionCallback(cb);
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day07](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day07)
 
-# day08-一切皆是类，连TCP连接也不例外
+## day08-一切皆是类，连TCP连接也不例外
 
 在上一天，我们分离了用于接受连接的`Acceptor`类，并把新建连接的逻辑放在了`Server`类中。在上一天我们还提到了`Acceptor`类最主要的三个特点：
 
@@ -895,7 +895,7 @@ void Server::deleteConnection(Socket * sock){
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day08](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day08)
 
-# day09-缓冲区-大作用
+## day09-缓冲区-大作用
 
 在之前的教程中，一个完整的单线程服务器设计模式已经编码完成了。在进入多线程编程之前，应该完全理解单线程服务器的工作原理，因为多线程更加复杂、更加困难，开发难度远大于之前的单线程模式。不仅如此，读者也应根据自己的理解进行二次开发，完善服务器，比如非阻塞式socket模块就值得细细研究。
 
@@ -986,7 +986,7 @@ void Connection::echo(int sockfd){
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day09](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day09)
 
-# day10-加入线程池到服务器
+## day10-加入线程池到服务器
 
 今天是本教程的第十天，在之前，我们已经编码完成了一个完整的单线程服务器，最核心的几个模块都已经抽象出来，Reactor事件驱动大体成型（除了线程池），各个类的生命周期也大体上合适了，读者应该完全理解之前的服务器代码后再开始今天的学习。
 
@@ -1063,7 +1063,7 @@ void ThreadPoll::add(std::function<void()> func){
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day10](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day10)
 
-# day11-完善线程池，加入一个简单的测试程序
+## day11-完善线程池，加入一个简单的测试程序
 
 在昨天的教程里，我们添加了一个最简单的线程池到服务器，一个完整的Reactor模式正式成型。这个线程池只是为了满足我们的需要构建出的最简单的线程池，存在很多问题。比如，由于任务队列的添加、取出都存在拷贝操作，线程池不会有太好的性能，只能用来学习，正确做法是使用右值移动、完美转发等阻止拷贝。另外线程池只能接受`std::function<void()>`类型的参数，所以函数参数需要事先使用`std::bind()`，并且无法得到返回值。
 
@@ -1125,7 +1125,7 @@ where / bt  #查看调用栈
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day11](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day11)
 
-# day12-将服务器改写为主从Reactor多线程模式
+## day12-将服务器改写为主从Reactor多线程模式
 
 在上一天的教程，我们实现了一种最容易想到的多线程Reactor模式，即将每一个Channel的任务分配给一个线程执行。这种模式有很多缺点，逻辑上也有不合理的地方。比如当前版本线程池对象被`EventLoop`所持有，这显然是不合理的，线程池显然应该由服务器类来管理，不应该和事件驱动产生任何关系。如果强行将线程池放进`Server`类中，由于`Channel`类只有`EventLoop`对象成员，使用线程池则需要注册回调函数，十分麻烦。
 
@@ -1190,7 +1190,7 @@ Connection *conn = new Connection(subReactors[random], sock);   //分配给一�
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day12](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day12)
 
-# day13-C++工程化、代码分析、性能优化
+## day13-C++工程化、代码分析、性能优化
 
 在之前的教程里，我们已经完整开发了一个主从Reactor多线程的服务器的核心架构，接下来的开发重心应该从架构转移到细节。在这之前，将整个项目现代化、工程化是必要的，也是必须的。
 
@@ -1350,7 +1350,7 @@ make single_client
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day13](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day13)
 
-# day14-支持业务逻辑自定义、完善Connection类
+## day14-支持业务逻辑自定义、完善Connection类
 
 回顾之前的教程，可以看到服务器Echo业务的逻辑在`Connection`类中。如果我们需要不同的业务逻辑，如搭建一个HTTP服务器，或是一个FTP服务器，则需要改动`Connection`中的代码，这显然是不合理的。`Connection`类作为网络库的一部分，不应该和业务逻辑产生联系，业务逻辑应该由网络库用户自定义，写在`server.cpp`中。同时，作为一个通用网络库，客户端也可以使用网络库来编写相应的业务逻辑。今天我们需要完善`Connection`类，支持业务逻辑自定义。
 
@@ -1444,7 +1444,7 @@ ps.如果连接是从服务器到客户端，所有的读写都应采用非阻�
 
 完整源代码：[https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day14](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day14)
 
-# day15-macOS、FreeBSD支持
+## day15-macOS、FreeBSD支持
 
 作为程序员，使用MacBook电脑作为开发机很常见，本质和Linux几乎没有区别。本教程的EventLoop中使用Linux系统支持的epoll，然而macOS里并没有epoll，取而代之的是FreeBSD的kqueue，功能和使用都和epoll很相似。Windows系统使用WSL可以完美编译运行源代码，但MacBook则需要Docker、云服务器、或是虚拟机，很麻烦。在今天，我们将支持使用kqueue作为`EventLoop`类的Poller，使网络库可以在macOS等FreeBSD系统上原生运行。
 
