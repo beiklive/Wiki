@@ -1,4 +1,9 @@
+---
+comments: true
+---
+
 ## 使用npm/cnpm全局安装：
+
 ```bash
 $ npm install -g pm2
 ```

@@ -1,4 +1,9 @@
+---
+comments: true
+---
+
 # 中文编码支持
+
 ```bash
 # -*- coding: utf-8 -*-  
 ```

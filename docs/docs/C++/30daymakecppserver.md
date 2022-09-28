@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # 30天自制C++服务器
 
 教程的配套网络库：[pine](https://github.com/yuesong-feng/pine)，star and fork!

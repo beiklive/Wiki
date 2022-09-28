@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 目录
 
 https://github.com/guanguans/design-patterns-for-humans-cn

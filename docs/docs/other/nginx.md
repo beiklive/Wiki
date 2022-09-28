@@ -1,3 +1,6 @@
+---
+comments: true
+---
 > 关于nginx的一些常用配置
 
 

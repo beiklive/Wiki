@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 后台运行nodejs应用
 
 ```javascript title="创建一个启动程序run.js"

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # IO多路复用（select poll  epoll）
 
 # select
@@ -93,6 +97,7 @@ int epoll_ctl(int efpd,int op,int sockid,struct epoll_event *event);
 * **EPOLL_CTL_MOD**：修改事件你 用了EPOLL_CTL_ADD把节点添加到红黑树上之后，才存在修改
 * **EPOLL_CTL_DEL**：是从红黑树上把这个节点干掉这会导致这个socket【这个tcp链接】上无法收到任何系统通知事件
   
+
 **sockid**：表示客户端连接，就是你从accept()这个是红黑树里边的key;
 
 **event**：事件信息，这里包括的是 一些事件信息EPOLL_CTL_ADD和EPOLL_CTL_MOD都要用到这个event参数里边的事件信息
