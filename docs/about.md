@@ -1,3 +1,12 @@
+---
+hide:
+  - navigation
+  - toc
+comments: true
+---
+
+
+
 <!-- 贪吃蛇代码贡献图 -->
 
 <div align="center"><img src="https://cdn.jsdelivr.net/gh/beiklive/beiklive/contribution-snake/github-contribution-grid-snake.svg" /></div>
