@@ -38,6 +38,7 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
   logo: img/favicon.svg
   favicon: img/favicon.svg
   language: zh
