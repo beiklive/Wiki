@@ -4,9 +4,9 @@ hide:
   - toc
 comments: true
 ---
-
-# 异世界穿越指南
-
+<div align="center">
+<h1> 异世界穿越指南 </h1>
+</div>
 <div align="center">
 <img id="coverimg" style="
 border-radius:10px;
