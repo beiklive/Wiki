@@ -124,7 +124,8 @@ serv_addr.sin_port = htons(8888);
 bind(sockfd, (sockaddr*)&serv_addr, sizeof(serv_addr));
 ```
 
-!!! 为什么定义的时候使用专用socket地址（sockaddr_in）而绑定的时候要转化为通用socket地址（sockaddr），以及转化IP地址和端口号为网络字节序的`inet_addr`和`htons`等函数及其必要性
+!!! note
+    为什么定义的时候使用专用socket地址（sockaddr_in）而绑定的时候要转化为通用socket地址（sockaddr），以及转化IP地址和端口号为网络字节序的`inet_addr`和`htons`等函数及其必要性
 
     为什么使用 sockaddr_in 而不使用 sockaddr
 
