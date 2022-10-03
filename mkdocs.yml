@@ -22,9 +22,11 @@ nav:
       - 线程池: docs/C++/ThreadPool.md
     - Nodejs:
       - Nodejs笔记: docs/Nodejs/nodejs.md
-      - pm2使用: docs/Nodejs/pm2.md
+      - pm2使用: docs/Nodejs/pm2.md                
+    - VUE:
+      - VUE笔记: docs/VUE/VUE.md                                           
   - Linux相关:
-    - ubuntu: docs/Linux/ubuntu.md
+    - ubuntu: docs/Linux/ubuntu.md                 
     - I/O多路复用: docs/Linux/IO多路复用.md
     - 树莓派: docs/Linux/树莓派.md
   - 夏集八学:
