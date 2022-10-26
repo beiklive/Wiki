@@ -66,6 +66,3 @@ comments: true
 
 
 
-
-
-<div align="center">❤️powered by docsify❤️</div>
