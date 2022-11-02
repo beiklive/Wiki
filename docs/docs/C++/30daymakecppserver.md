@@ -23,55 +23,7 @@ C/C++学习的一个难点在于初学时无法做出实际上的东西，没有
 
 在code文件夹里有每一天的代码文件夹，进入该文件夹，使用`make`命令编译，会生成两个可执行文件，输入命令`./server`就能看到今天的学习成果！然后新建一个Terminal，然后输入`./client`运行客户端，与服务器交互。
 
-[day01-从一个最简单的socket开始](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day01-从一个最简单的socket开始.md)
 
-[day02-不要放过任何一个错误](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day02-不要放过任何一个错误.md)
-
-[day03-高并发还得用epoll](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day03-高并发还得用epoll.md)
-
-[day04-来看看我们的第一个类](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day04-来看看我们的第一个类.md)
-
-[day05-epoll高级用法-Channel登场](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day05-epoll高级用法-Channel登场.md)
-
-[day06-服务器与事件驱动核心类登场](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day06-服务器与事件驱动核心类登场.md)
-
-[day07-为我们的服务器添加一个Acceptor](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day07-为我们的服务器添加一个Acceptor.md)
-
-[day08-一切皆是类，连TCP连接也不例外](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day08-一切皆是类，连TCP连接也不例外.md)
-
-[day09-缓冲区-大作用](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day09-缓冲区-大作用.md)
-
-[day10-加入线程池到服务器](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day10-加入线程池到服务器.md)
-
-[day11-完善线程池，服务器成型，写测试程序](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day11-完善线程池，加入一个简单的测试程序.md)
-
-[day12-将服务器改写为主从Reactor多线程模式](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day12-将服务器改写为主从Reactor多线程模式.md)
-
-[day13-C++工程化、代码分析、性能优化](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day13-C++工程化、代码分析、性能优化.md)
-
-[day14-支持业务逻辑自定义、完善Connection类](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day14-支持业务逻辑自定义、完善Connection类.md)
-
-[day15-macOS、FreeBSD支持](https://github.com/yuesong-feng/30dayMakeCppServer/blob/main/day15-macOS、FreeBSD支持.md)
-
-## todo list:
-
-定时器
-
-日志系统
-
-HTTP协议支持
-
-webbench测试
-
-......
-
-Contribute
-
-能力一般、水平有限，如果发现我的教程有不正确或者值得改进的地方，欢迎提issue或直接PR。
-
-欢迎大家为本项目贡献自己的代码，如果有你觉得更好的代码，请提issue或者直接PR，所有建议都会被考虑。
-
-贡献代码请到[pine](https://github.com/yuesong-feng/pine)项目，这是本教程开发的网络库，也是最新的代码版本。
 
 ## day01-从一个最简单的socket开始
 
@@ -128,26 +80,26 @@ bind(sockfd, (sockaddr*)&serv_addr, sizeof(serv_addr));
     为什么定义的时候使用专用socket地址（sockaddr_in）而绑定的时候要转化为通用socket地址（sockaddr），以及转化IP地址和端口号为网络字节序的`inet_addr`和`htons`等函数及其必要性
 
     为什么使用 sockaddr_in 而不使用 sockaddr
-
+    
     bind() 第二个参数的类型为 sockaddr，而代码中却使用 sockaddr_in，然后再强制转换为 sockaddr，这是为什么呢？
-
+    
     sockaddr 结构体的定义如下：
-
+    
     ```c
     struct sockaddr{    
         sa_family_t  sin_family;   //地址族（Address Family），也就是地址类型    
         char         sa_data[14];  //IP地址和端口号
     };
     ```
-
+    
     下图是 sockaddr 与 sockaddr_in 的对比（括号中的数字表示所占用的字节数）：
-
+    
     ![1](img/1.jpg)
-
+    
     sockaddr 和 sockaddr_in 的长度相同，都是16字节，只是将IP地址和端口号合并到一起，用一个成员 sa_data 表示。要想给 sa_data 赋值，必须同时指明IP地址和端口号，例如”127.0.0.1:80“，遗憾的是，没有相关函数将这个字符串转换成需要的形式，也就很难给 sockaddr 类型的变量赋值，所以使用 sockaddr_in 来代替。这两个结构体的长度相同，强制转换类型时不会丢失字节，也没有多余的字节。
-
+    
     可以认为，sockaddr 是一种通用的结构体，可以用来保存多种类型的IP地址和端口号，而 sockaddr_in 是专门用来保存 IPv4 地址的结构体。另外还有 sockaddr_in6，用来保存 IPv6 地址，它的定义如下：
-
+    
     ```c
     struct sockaddr_in6 { 
         sa_family_t sin6_family;  //(2)地址类型，取值为AF_INET6
@@ -157,7 +109,7 @@ bind(sockfd, (sockaddr*)&serv_addr, sizeof(serv_addr));
         uint32_t sin6_scope_id;  //(4)接口范围ID
     };
     ```
-
+    
     正是由于通用结构体 sockaddr 使用不便，才针对不同的地址类型定义了不同的结构体。
 
 最后我们需要使用`listen`函数监听这个socket端口，这个函数的第二个参数是listen函数的最大监听队列长度，系统建议的最大值`SOMAXCONN`被定义为128。
