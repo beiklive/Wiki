@@ -1,4 +1,4 @@
-site_name: 杰宝的Wiki
+site_name: BEIKLIVE
 site_description: 杰宝的Wiki
 copyright: >
   Copyright &copy; 2021 - 2022
@@ -10,8 +10,8 @@ site_description: Blog for beiklive
 site_author: beiklive
 
 nav:
-  - 主页: index.md
-  - 代码笔记: 
+  - 首页: index.md
+  - 学习笔记: 
     - Python:
       - Python笔记: docs/Python/python.md
     - C++:
@@ -20,21 +20,21 @@ nav:
       - 设计模式: docs/C++/design-patterns.md
       - 30天编写C++服务器: docs/C++/30daymakecppserver.md
       - 线程池: docs/C++/ThreadPool.md
-      - 控制台小游戏: docs/C++/games.md
+      - 小游戏: docs/C++/games.md
     - Nodejs:
       - Nodejs笔记: docs/Nodejs/nodejs.md
       - pm2使用: docs/Nodejs/pm2.md                
     - VUE:
       - VUE笔记: docs/VUE/VUE.md                                           
-  - Linux相关:
-    - ubuntu: docs/Linux/ubuntu.md                 
-    - I/O多路复用: docs/Linux/IO多路复用.md
+    - Linux相关:
+      - ubuntu配置: docs/Linux/ubuntu.md                 
+      - I/O多路复用: docs/Linux/IO多路复用.md
     - 树莓派: docs/Linux/树莓派.md
-  - 夏集八学:
-    - nginx: docs/other/nginx.md
-    - 正则表达式: docs/other/regx.md
-    - wsl管理器: docs/other/wsl.md
-    - 中国程序员容易发音错误的单词: docs/other/duyin.md
+    - 夏集八学:
+      - nginx: docs/other/nginx.md
+      - 正则表达式: docs/other/regx.md
+      - wsl管理器: docs/other/wsl.md
+      - 中国程序员容易发音错误的单词: docs/other/duyin.md
   - 关于: about.md
   - 帮助: 
     - 文档语法: help.md
