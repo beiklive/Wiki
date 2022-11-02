@@ -2,17 +2,17 @@
 comments: true
 ---
 
-# 创建快捷方式
+## 创建快捷方式
 
-## 进入图标文件目录
+### 进入图标文件目录
 ```bash
 $ cd /usr/share/applications
 ```
-## 创建图标文件
+### 创建图标文件
 ```bash
 $ sudo vim myapp.desktop
 ```
-## 输入图标相关信息
+### 输入图标相关信息
 ```bash
 [Desktop Entry]
 Encoding=UTF-8      #应用名称为中文时需要添加此行
@@ -27,17 +27,17 @@ Categories=Application; # 分类
 ```
 
 
-# 分区挂载
-## VMware磁盘扩容
+## 分区挂载
+### VMware磁盘扩容
 [https://www.likecs.com/show-203437057.html](https://www.likecs.com/show-203437057.html)
 
 
 
 
 
-# Samba配置
+## Samba配置
 
-## 安装
+### 安装
 
 ```bash
 sudo apt-get install samba samba-common
@@ -45,20 +45,20 @@ sudo apt-get install samba samba-common
 
 
 
-## 设置共享目录
+### 设置共享目录
 
 ```bash
 mkdir /home/beiklive/share
 sudo chmod 777 /home/beiklive/share
 ```
 
-## 添加用户
+### 添加用户
 
 ```bash
 sudo smbpasswd -a beiklive
 ```
 
-## 修改配置文件
+### 修改配置文件
 
 ```bash
 sudo vim /etc/samba/smb.conf
@@ -81,7 +81,7 @@ available = yes
 writable = yes
 ```
 
-## 重启
+### 重启
 
 ```bash
 sudo service smbd restart
