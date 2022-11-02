@@ -17,7 +17,6 @@ comments: true
 #include <termio.h>
 #include <stdlib.h>
 using namespace tabulate;
-using namespace std;
 
 const unsigned char CTRL_KEY = 'q';
 const unsigned char LEFT = 'a';
@@ -42,7 +41,7 @@ int getch(void)
     return ch;
 }
 
-void clearS()
+void screenClear()
 {
 #ifdef __linux__
     std::cout << "\033c";
@@ -51,36 +50,36 @@ void clearS()
 #endif
 }
 
-std::string tableTrans(int a)
+std::string tableTransFormat(int a)
 {
-    return (a == 0 ? " " : to_string(a));
+    return (a == 0 ? " " : std::to_string(a));
 }
 
-void tableformat(int score, int table[][4])
+void tableFlush(int score, int table[][4])
 {
-    clearS();
+    screenClear();
     Table title_score;
-    title_score.add_row({"total_score : " + to_string(score)});
+    title_score.add_row({"total_score : " + std::to_string(score)});
     title_score[0].format().font_align(FontAlign::center).width(25);
 
     Table styled_table;
-    styled_table.add_row({tableTrans(table[0][0]), tableTrans(table[0][1]), tableTrans(table[0][2]), tableTrans(table[0][3])});
-    styled_table.add_row({tableTrans(table[1][0]), tableTrans(table[1][1]), tableTrans(table[1][2]), tableTrans(table[1][3])});
-    styled_table.add_row({tableTrans(table[2][0]), tableTrans(table[2][1]), tableTrans(table[2][2]), tableTrans(table[2][3])});
-    styled_table.add_row({tableTrans(table[3][0]), tableTrans(table[3][1]), tableTrans(table[3][2]), tableTrans(table[3][3])});
+    styled_table.add_row({tableTransFormat(table[0][0]), tableTransFormat(table[0][1]), tableTransFormat(table[0][2]), tableTransFormat(table[0][3])});
+    styled_table.add_row({tableTransFormat(table[1][0]), tableTransFormat(table[1][1]), tableTransFormat(table[1][2]), tableTransFormat(table[1][3])});
+    styled_table.add_row({tableTransFormat(table[2][0]), tableTransFormat(table[2][1]), tableTransFormat(table[2][2]), tableTransFormat(table[2][3])});
+    styled_table.add_row({tableTransFormat(table[3][0]), tableTransFormat(table[3][1]), tableTransFormat(table[3][2]), tableTransFormat(table[3][3])});
 
     title_score.add_row({styled_table});
     title_score[1].format().font_align(FontAlign::center);
     std::cout << title_score << std::endl;
 }
 
-int getRandomPos()
+int randomPosGet()
 {
     int r = rand() % 4;
     return r;
 }
 
-void ScoreSet(int var)
+void scoreSet(int var)
 {
     if (var <= MAXPOINT && var > 0)
     {
@@ -100,9 +99,9 @@ void clearMax(int x, int y, int table[][4])
     }
 }
 
-bool genElem(int table[][4])
+bool elemGen(int table[][4])
 {
-    int i = getRandomPos(), j = getRandomPos();
+    int i = randomPosGet(), j = randomPosGet();
     int flag = 0;
     for (int i = 0; i < 4; i++)
     {
@@ -120,14 +119,14 @@ bool genElem(int table[][4])
     }
     while (table[i][j] != 0)
     {
-        i = getRandomPos();
-        j = getRandomPos();
+        i = randomPosGet();
+        j = randomPosGet();
     }
     table[i][j] = (rand() % 2) * 2 + 2;
     return true;
 }
 
-void reset(int table[][4])
+void tableReset(int table[][4])
 {
     for (int i = 0; i < 4; i++)
     {
@@ -136,7 +135,7 @@ void reset(int table[][4])
             table[i][j] = 0;
         }
     }
-    ScoreSet(-1);
+    scoreSet(-1);
 }
 
 void MoveElemToLeft(int table[][4])
@@ -156,7 +155,7 @@ void MoveElemToLeft(int table[][4])
                 }
                 else if (table[j][i] == table[j][i + 1])
                 {
-                    ScoreSet(table[j][i]);
+                    scoreSet(table[j][i]);
                     table[j][i] += table[j][i + 1];
                     table[j][i + 1] = 0;
                 }
@@ -182,7 +181,7 @@ void MoveElemToRight(int table[][4])
                 }
                 else if (table[j][i] == table[j][i - 1])
                 {
-                    ScoreSet(table[j][i]);
+                    scoreSet(table[j][i]);
                     table[j][i] += table[j][i - 1];
                     table[j][i - 1] = 0;
                 }
@@ -210,7 +209,7 @@ void MoveElemToUp(int table[][4])
                 {
                     table[i][j] += table[i + 1][j];
                     table[i + 1][j] = 0;
-                    ScoreSet(table[i][j]);
+                    scoreSet(table[i][j]);
                 }
             }
         }
@@ -236,14 +235,14 @@ void MoveElemToDown(int table[][4])
                 {
                     table[i][j] += table[i - 1][j];
                     table[i - 1][j] = 0;
-                    ScoreSet(table[i][j]);
+                    scoreSet(table[i][j]);
                 }
             }
         }
     }
 }
 
-void changeGap(int mode, int table[][4])
+void oneGapChange(int mode, int table[][4])
 {
     switch (mode)
     {
@@ -263,48 +262,48 @@ void changeGap(int mode, int table[][4])
         break;
     }
 
-    if (genElem(table))
+    if (elemGen(table))
     {
-        genElem(table);
-        tableformat(totalscore, table);
+        elemGen(table);
+        tableFlush(totalscore, table);
     }
     else
     {
-        reset(table);
-        tableformat(totalscore, table);
+        tableReset(table);
+        tableFlush(totalscore, table);
     }
 }
 
 int main()
 {
     char a;
-    tableformat(0, table1024);
+    tableFlush(0, table1024);
 
     while (1)
     {
         switch (a = getch())
         {
         case LEFT:
-            changeGap(0, table1024);
+            oneGapChange(0, table1024);
             std::cout << "LEFT" << std::endl;
             break;
         case RIGHT:
-            changeGap(1, table1024);
+            oneGapChange(1, table1024);
             std::cout << "RIGHT" << std::endl;
             break;
         case DOWN:
-            changeGap(2, table1024);
+            oneGapChange(2, table1024);
             std::cout << "DOWN" << std::endl;
             break;
         case UP:
-            changeGap(3, table1024);
+            oneGapChange(3, table1024);
             std::cout << "UP" << std::endl;
             break;
         case CTRL_KEY:
             std::cout << "exit" << std::endl;
             return 0;
         default:
-            tableformat(totalscore, table1024);
+            tableFlush(totalscore, table1024);
             std::cout << a << std::endl;
             break;
         }
