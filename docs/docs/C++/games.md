@@ -4,7 +4,7 @@ comments: true
 
 
 ## 控制台2048
-<img src="img/2048.png" alt="2048" style="zoom:50%;" />
+<img src="img/2048.png" alt="2048"  />
 
 !!! note
     头文件`tabulate/table.hpp`地址：[https://github.com/p-ranav/tabulate](https://github.com/p-ranav/tabulate)
