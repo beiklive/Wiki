@@ -82,7 +82,7 @@ int getRandomPos()
 
 void ScoreSet(int var)
 {
-    if (totalscore <= MAXPOINT)
+    if (var <= MAXPOINT && var > 0)
     {
         totalscore += var;
     }
@@ -136,7 +136,7 @@ void reset(int table[][4])
             table[i][j] = 0;
         }
     }
-    ScoreSet(0);
+    ScoreSet(-1);
 }
 
 void MoveElemToLeft(int table[][4])
