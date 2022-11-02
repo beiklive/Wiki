@@ -20,6 +20,7 @@ nav:
       - 设计模式: docs/C++/design-patterns.md
       - 30天编写C++服务器: docs/C++/30daymakecppserver.md
       - 线程池: docs/C++/ThreadPool.md
+      - 控制台小游戏: docs/C++/games.md
     - Nodejs:
       - Nodejs笔记: docs/Nodejs/nodejs.md
       - pm2使用: docs/Nodejs/pm2.md                
