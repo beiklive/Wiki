@@ -2,14 +2,14 @@
 comments: true
 ---
 
-# 中文编码支持
+## 中文编码支持
 
 ```bash
 # -*- coding: utf-8 -*-  
 ```
-# PIP相关
-## 换源
-### 常用的国内镜像包括：
+## PIP相关
+### 换源
+#### 常用的国内镜像包括：
 >（1）阿里云 http://mirrors.aliyun.com/pypi/simple/
 
 >（2）豆瓣http://pypi.douban.com/simple/ 
@@ -20,11 +20,11 @@ comments: true
 
 >（5）华中科技大学http://pypi.hustunique.com/
 
-### 临时换源
+#### 临时换源
 ```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas
 ```
-### 永久换源
+#### 永久换源
 ```
 （a）Linux下，修改 ~/.pip/pip.conf (没有就创建一个文件夹及文件。文件夹要加“.”，表示是隐藏文件夹)
 [global]
@@ -38,12 +38,12 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 [install]
 trusted-host = https://pypi.tuna.tsinghua.edu.cn
 ```
-# selenium使用
-## 安装：
+## selenium使用
+### 安装：
 ```bash
 pip install selenium
 ```
-## 相关代码
+### 相关代码
 ```python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -60,7 +60,7 @@ userName_tag.send_keys('100019050')
 # 点击
 res.click()
 ```
-## 判断元素存在
+### 判断元素存在
 ```python
 from selenium.common.exceptions import NoSuchElementException
 # 元素是否存在 is_element_present(driver, By.XPATH, "//div[text()='回收站']")
@@ -71,19 +71,19 @@ def is_element_present(driver, type, value):
         return False
     return True
 ```
-## 双击动作
+### 双击动作
 ```python
 from  selenium.webdriver.common.action_chains import ActionChains
 ActionChains(driver).double_click(driver.find_element_by_name(“name”)).perform()
 ```
-## 指定缓存目录，保留登陆状态
+### 指定缓存目录，保留登陆状态
 ```python
 # 目录路径在：chrome://version/   个人资料路径
 option = webdriver.ChromeOptions()
 option.add_argument('--user-data-dir=/home/dongjie/.config/google-chrome')
 driver = webdriver.Chrome(options = option)
 ```
-# log日志
+## log日志
 ```python
 import logging
 
@@ -93,11 +93,11 @@ logging.warning("This is a warning log.")
 logging.error("This is a error log.")
 logging.critical("This is a critical log.")
 ```
-## 日志级别
+### 日志级别
 ```python
 logging.basicConfig(level=logging.DEBUG)  #默认只显示warning及以上
 ```
-## 日志格式
+### 日志格式
 ```python
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(format=LOG_FORMAT)
@@ -107,17 +107,17 @@ logging.basicConfig(format=LOG_FORMAT)
 #2017-05-08 14:29:53,784 - ERROR - This is a error log.
 #2017-05-08 14:29:53,784 - CRITICAL - This is a critical log.
 ```
-## 日期格式
+### 日期格式
 ```python
 DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
 logging.basicConfig(datefmt=DATE_FORMAT)
 ```
-## 输出到文件
+### 输出到文件
 ```python
 logging.basicConfig(filename='my.log')
 ```
-# tornado
-## 命令行参数
+## tornado
+### 命令行参数
 ```python
 from tornado.options import define, options
 
@@ -128,7 +128,7 @@ define("isExecute", default='true', help="控制是否执行脚本", type=str)
 
 print(options.port)
 ```
-## 使用
+### 使用
 ```bash
 python app.py --port=3000 --script="myscript.sh" --uarg="/post" --isExecute="false"
 ```
