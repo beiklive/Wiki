@@ -132,3 +132,46 @@ print(options.port)
 ```bash
 python app.py --port=3000 --script="myscript.sh" --uarg="/post" --isExecute="false"
 ```
+
+## 解析yaml
+test.yml如下
+```
+# 用户名
+user_name: tinker
+
+# 日期
+date: 2022-02-21
+
+# user_name_list
+user_name_list:
+ - user_name: Tom
+ - user_name: Jack
+ - user_name: tinker
+```
+解析代码如下
+```python
+#!/usr/bin/python
+# vim: set fileencoding:utf-8
+import os
+
+import yaml
+
+# 获取yaml文件路径
+yamlPath = os.path.join("D:\\test\\", "config.yml")
+
+# open方法打开直接读出来
+f = open(yamlPath, 'r', encoding='utf-8')
+cfg = f.read()
+
+params = yaml.load(cfg, Loader=yaml.SafeLoader)
+
+user_name = params['user_name']
+plan_date = params['date'] if params['date'] is not None else ''
+user_name_list = params['user_name_list']
+
+print(user_name)
+print(plan_date)
+
+for element in user_name_list:
+    print(element.get('user_name'))
+```
