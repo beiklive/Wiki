@@ -31,9 +31,13 @@ sudo systemctl start xxx
 ```
 sudo systemctl enable xxx
 ```
+
 * 重启应用 `sudo systemctl restart xxx`
+
 * 停止应用 `sudo systemctl stop xxx`
+
 * 查看应用的日志 `sudo systemctl status xxx`
+
 
 其他服务后台运行方法
 [https://blog.csdn.net/x7418520/article/details/81077652](https://blog.csdn.net/x7418520/article/details/81077652)
