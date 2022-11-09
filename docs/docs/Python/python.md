@@ -135,7 +135,7 @@ python app.py --port=3000 --script="myscript.sh" --uarg="/post" --isExecute="fal
 
 ## 解析yaml
 test.yml如下
-```
+```yaml
 # 用户名
 user_name: tinker
 
