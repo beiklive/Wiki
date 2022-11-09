@@ -2,7 +2,8 @@
 hide:
   - navigation
   - toc
-comments: true
+  - footer
+comments: false
 ---
 <div align="center">
 <h1> 异世界穿越指南 </h1>
