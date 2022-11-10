@@ -2,9 +2,9 @@
 comments: true
 ---
 
-# IO多路复用（select poll  epoll）
+## IO多路复用（select poll  epoll）
 
-# select
+### select
 fd_set 使用数组实现  
 1. fd_size 有限制 1024 bitmap
     fd[i] = accept()
@@ -14,7 +14,7 @@ fd_set 使用数组实现
 成功调用返回结果大于 0，出错返回结果为 -1，超时返回结果为 0
 5. 具有超时时间
 
-# poll
+### poll
 基于结构体存储fd
 ```c
 struct pollfd{
@@ -25,16 +25,16 @@ struct pollfd{
 ```
 解决了select的1,2两点缺点
 
-# epoll
+### epoll
 
 [知乎](https://zhuanlan.zhihu.com/p/460786724)
 
-## 特点
+#### 特点
 解决select的1，2，3，4
 不需要轮询，时间复杂度为O(1)
 
 
-## 两种触发模式：
+#### 两种触发模式：
 * LT:水平触发
     > 当 epoll_wait() 检测到描述符事件到达时，将此事件通知进程，进程可以不立即处理该事件，下次调用 epoll_wait() 会再次通知进程。是默认的一种模式，并且同时支持 Blocking 和 No-Blocking。
 * ET:边缘触发
@@ -42,18 +42,18 @@ struct pollfd{
     下次再调用 epoll_wait() 时不会再得到事件到达的通知。很大程度上减少了 epoll 事件被重复触发的次数，
     因此效率要比 LT 模式高。只支持 No-Blocking，以避免由于一个文件句柄的阻塞读/阻塞写操作把处理多个文件描述符的任务饿死。
 
-## 四个函数
+#### 四个函数
 * `epoll_create();`
 * `epoll_ctl();`
 * `epoll_wait();`
 * `epoll_event_callback();`
 
-### int epoll_create(int size)
+##### int epoll_create(int size)
 * 功能：创建一个epoll对象，返回该对象的描述符【文件描述符】，这个描述符就代表这个epoll对象，后续会用到。
 * 这个epoll对象最终要用close()，因为文件描述符/句柄 总是关闭的。
 * size > 0;。
 
-#### 原理
+原理
 ```c
 struct eventpoll *ep = (struct eventpoll*)calloc(1, sizeof(struct eventpoll)); 
 ```
@@ -82,7 +82,7 @@ struct eventpoll {
 };
 ```
 
-### epoll_ctl()
+##### epoll_ctl()
 ```c
 int epoll_ctl(int efpd,int op,int sockid,struct epoll_event *event);
 ```
@@ -103,7 +103,7 @@ int epoll_ctl(int efpd,int op,int sockid,struct epoll_event *event);
 **event**：事件信息，这里包括的是 一些事件信息EPOLL_CTL_ADD和EPOLL_CTL_MOD都要用到这个event参数里边的事件信息
 
 
-### epoll_wait()
+##### epoll_wait()
 ```c
 int epoll_wait(int epfd,struct epoll_event *events,int maxevents,int timeout);
 ```
@@ -131,3 +131,8 @@ b)当客户端关闭连接，服务器也要调用close()关闭
 c)客户端发送数据来的服务器要调用read(),recv()函数来收数据
 d)当可以发送数据时服务武器可以调用send(),write()
 e)其他情况...
+
+***
+
+## 零拷贝
+[https://www.xiaolincoding.com/os/8_network_system/zero_copy.html](https://www.xiaolincoding.com/os/8_network_system/zero_copy.html)
