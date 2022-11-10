@@ -1,3 +1,3 @@
 # Mkdocs驱动的博客
 
-谁教我一下怎么加评论
+![Alt](https://repobeats.axiom.co/api/embed/d91e49f499d8ddc639f44339bcba94571b927360.svg "Repobeats analytics image")
