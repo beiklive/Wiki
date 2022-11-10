@@ -30,7 +30,7 @@ nav:
       - ubuntu相关: docs/Linux/ubuntu.md                 
       - Linux系统: docs/Linux/linux系统.md
       - 服务搭建: docs/Linux/Server.md
-    - 树莓派: docs/Linux/树莓派.md
+      - 树莓派: docs/Linux/树莓派.md
     - 夏集八学:
       - NGINX: docs/other/nginx.md
       - 正则表达式: docs/other/regx.md
