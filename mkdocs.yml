@@ -1,5 +1,5 @@
 site_name: BEIKLIVE
-site_description: 杰宝的Wiki
+site_description: 杰宝的WIKI
 copyright: >
   Copyright &copy; 2021 - 2022
   <a href="http://beiklive.top">beiklive</a>
@@ -22,21 +22,19 @@ nav:
       - 30天编写C++服务器: docs/C++/30daymakecppserver.md
       - 线程池: docs/C++/ThreadPool.md
       - 小游戏: docs/C++/games.md
-    - Nodejs:
-      - Nodejs笔记: docs/Nodejs/nodejs.md
-      - pm2使用: docs/Nodejs/pm2.md                
-    - VUE:
+    - 前端:
+      - NodeJs笔记: docs/Nodejs/nodejs.md
+      - PM2使用: docs/Nodejs/pm2.md                
       - VUE笔记: docs/VUE/VUE.md                                           
-    - Linux相关:
-      - ubuntu配置: docs/Linux/ubuntu.md                 
-      - I/O多路复用: docs/Linux/linux系统.md
+    - Linux:
+      - ubuntu相关: docs/Linux/ubuntu.md                 
+      - Linux系统: docs/Linux/linux系统.md
       - 服务搭建: docs/Linux/Server.md
     - 树莓派: docs/Linux/树莓派.md
     - 夏集八学:
-      - nginx: docs/other/nginx.md
+      - NGINX: docs/other/nginx.md
       - 正则表达式: docs/other/regx.md
-      - wsl管理器: docs/other/wsl.md
-      - 中国程序员容易发音错误的单词: docs/other/duyin.md
+      - WSL管理器: docs/other/wsl.md
   - 关于: about.md
   - 帮助: 
     - 文档语法: help.md
