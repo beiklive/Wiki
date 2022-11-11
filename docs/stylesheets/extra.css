@@ -8,11 +8,10 @@
 }
   
 .md-footer__inner{
-    height: 4rem;
-}
-
-.md-footer__link{
-    padding-top: 1rem;
+	visibility:hidden;
+	display:none;
+	width:0;
+	height:0;
 }
 
 .md-sidebar{
@@ -29,12 +28,10 @@
     margin-left: -0.7em;
 }
 
-/* hover */
-
 #coverimg{
 	transition: 0.5s;
 }
 
 #coverimg:hover{
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
