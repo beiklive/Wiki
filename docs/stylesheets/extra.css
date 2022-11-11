@@ -28,3 +28,13 @@
     font-family: "camingocode";
     margin-left: -0.7em;
 }
+
+/* hover */
+
+#coverimg{
+	transition: 0.5s;
+}
+
+#coverimg:hover{
+    transform: scale(1.1);
+}

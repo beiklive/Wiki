@@ -9,7 +9,7 @@ comments: true
 
 <!-- 贪吃蛇代码贡献图 -->
 
-<div align="center"><img src="https://cdn.jsdelivr.net/gh/beiklive/beiklive/contribution-snake/github-contribution-grid-snake.svg" /></div>
+<div align="center"><img src="https://github.com/Ohto-Ai-Dev/res/raw/master/assets/beiklive/github-contribution-grid-snake.svg" /></div>
 
 #  🙋 Hello
 
