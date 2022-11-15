@@ -33,6 +33,7 @@ nav:
       - 树莓派: docs/Linux/树莓派.md
     - 夏集八学:
       - NGINX: docs/other/nginx.md
+      - xmake: docs/other/xmake.md
       - 正则表达式: docs/other/regx.md
       - WSL管理器: docs/other/wsl.md
   - 关于: about.md
