@@ -224,3 +224,112 @@ if __name__=='__main__':
 ```bash
 file created:./test/1/q.txt
 ```
+
+## 图片处理
+使用流行的是 Pillow 模块，可以在下面找到优化图像所需的大部分方法。
+```python
+# Image Optimizing
+# pip install Pillow
+import PIL
+# Croping 
+im = PIL.Image.open("Image1.jpg")
+im = im.crop((34, 23, 100, 100))
+# Resizing
+im = PIL.Image.open("Image1.jpg")
+im = im.resize((50, 50))
+# Flipping
+im = PIL.Image.open("Image1.jpg")
+im = im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+# Rotating
+im = PIL.Image.open("Image1.jpg")
+im = im.rotate(360)
+# Compressing
+im = PIL.Image.open("Image1.jpg")
+im.save("Image1.jpg", optimize=True, quality=90)
+# Bluring
+im = PIL.Image.open("Image1.jpg")
+im = im.filter(PIL.ImageFilter.BLUR)
+# Sharpening
+im = PIL.Image.open("Image1.jpg")
+im = im.filter(PIL.ImageFilter.SHARPEN)
+# Set Brightness
+im = PIL.Image.open("Image1.jpg")
+im = PIL.ImageEnhance.Brightness(im)
+im = im.enhance(1.5)
+# Set Contrast
+im = PIL.Image.open("Image1.jpg")
+im = PIL.ImageEnhance.Contrast(im)
+im = im.enhance(1.5)
+# Adding Filters
+im = PIL.Image.open("Image1.jpg")
+im = PIL.ImageOps.grayscale(im)
+im = PIL.ImageOps.invert(im)
+im = PIL.ImageOps.posterize(im, 4)
+# Saving
+im.save("Image1.jpg")
+```
+## 视频优化
+使用 Moviepy 模块，允许你修剪、添加音频、设置视频速度、添加 VFX 等等。
+```python
+# Video Optimizer
+# pip install moviepy
+import moviepy.editor as pyedit
+# Load the Video
+video = pyedit.VideoFileClip("vid.mp4")
+# Trimming
+vid1 = video.subclip(0, 10)
+vid2 = video.subclip(20, 40)
+final_vid = pyedit.concatenate_videoclips([vid1, vid2])
+# Speed up the video
+final_vid = final_vid.speedx(2)
+# Adding Audio to the video
+aud = pyedit.AudioFileClip("bg.mp3")
+final_vid = final_vid.set_audio(aud)
+# Reverse the Video
+final_vid = final_vid.fx(pyedit.vfx.time_mirror)
+# Merge two videos
+vid1 = pyedit.VideoFileClip("vid1.mp4")
+vid2 = pyedit.VideoFileClip("vid2.mp4")
+final_vid = pyedit.concatenate_videoclips([vid1, vid2])
+# Add VFX to Video
+vid1 = final_vid.fx(pyedit.vfx.mirror_x)
+vid2 = final_vid.fx(pyedit.vfx.invert_colors)
+final_vid = pyedit.concatenate_videoclips([vid1, vid2])
+# Add Images to Video
+img1 = pyedit.ImageClip("img1.jpg")
+img2 = pyedit.ImageClip("img2.jpg")
+final_vid = pyedit.concatenate_videoclips([img1, img2])
+# Save the video
+final_vid.write_videofile("final.mp4")
+```
+
+## PDF 转图片
+使用流行的 PyMuPDF 模块，该模块以其 PDF 文本提取而闻名。
+```python
+# PDF to Images
+# pip install PyMuPDF
+import fitz
+def pdf_to_images(pdf_file):
+    doc = fitz.open(pdf_file)
+    for p in doc:
+        pix = p.get_pixmap()
+        output = f"page{p.number}.png"
+        pix.writePNG(output)
+pdf_to_images("test.pdf")
+```
+
+## 下载器
+```python
+# Python Downloader
+# pip install internetdownloadmanager
+import internetdownloadmanager as idm
+def Downloader(url, output):
+    pydownloader = idm.Downloader(worker=20,
+                                part_size=1024*1024*10,
+                                resumable=True,)
+ 
+    pydownloader .download(url, output)
+Downloader("Link url", "image.jpg")
+Downloader("Link url", "video.mp4")
+```
+
