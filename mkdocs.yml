@@ -22,6 +22,8 @@ nav:
       - 30天编写C++服务器: docs/C++/30daymakecppserver.md
       - 线程池: docs/C++/ThreadPool.md
       - 小游戏: docs/C++/games.md
+    - Rust:
+      - Rust笔记: docs/Rust/Rust.md
     - 前端:
       - NodeJs笔记: docs/Nodejs/nodejs.md
       - PM2使用: docs/Nodejs/pm2.md                
