@@ -29,3 +29,33 @@ comments: true
         }
     }
     ```
+
+## 定义一个类
+
+```rust
+// 利用结构体定义成员变量
+struct Fruit {
+    color: String,
+    weight: f32
+}
+// 利用impl关键字来定义结构体成员方法
+impl Fruit {
+    // 相当于方法Fruit::new()调用
+    fn new(color: String, weight:f32) -> Fruit {
+        Fruit {
+            color: color,
+            weight: weight
+        }
+    }
+    
+    fn printInfo(&self) {
+        println!("{},{}",self.color,self.weight);
+    }
+}
+// 调用
+fn main() {
+    let f = Fruit::new(String::from("green"), 12.5);
+    f.printInfo();
+}
+
+```
