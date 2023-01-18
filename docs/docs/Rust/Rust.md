@@ -3,7 +3,7 @@ comments: true
 ---
 
 ## 模块导入
-!!! note "main.rs"
+??? note "main.rs"
     导入模块使用的是模块的文件名
     ```rust
     mod sub_main;
@@ -16,7 +16,7 @@ comments: true
         sub_main(3);
     }
     ```
-!!! note "sub_main.rs"
+??? note "sub_main.rs"
     只有赋予了`pub`公开权限的方法才能在外部被调用，不添加`pub`关键字，默认为私有
     ```rust
     pub mod say {
