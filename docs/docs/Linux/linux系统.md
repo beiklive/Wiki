@@ -138,8 +138,11 @@ e)其他情况...
 [https://www.xiaolincoding.com/os/8_network_system/zero_copy.html](https://www.xiaolincoding.com/os/8_network_system/zero_copy.html)
 
 ## 终端文字颜色
-> 使用： `print("\033[91mThis is red text\033[0m")`
-> 重置代码为 `\033[0m`
+
+!!! note ""
+	使用： `print("\033[91mThis is red text\033[0m")`
+	重置代码为 `\033[0m`
+
 | 颜色 | 前景 | 背景 |
 |:-:|:-:|:-:|
 | Default | \033[39m | \033[49m |
@@ -159,3 +162,8 @@ e)其他情况...
 | Magenta | \033[95m | \033[105m |
 | Cyan | \033[96m | \033[106m |
 | White | \033[97m | \033[107m |
+
+## 终端清空
+```C++
+std::cout << "\033c";
+```
