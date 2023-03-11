@@ -1,7 +1,7 @@
 site_name: BEIKLIVE
 site_description: 杰宝的WIKI
 copyright: >
-  Copyright &copy; 2021 - 2022
+  Copyright &copy; 2021 - 2023
   <a href="http://beiklive.top">beiklive</a>
 
 site_url: https://wiki.beiklive.top/
@@ -12,35 +12,34 @@ site_author: beiklive
 nav:
   - 首页: index.md
   - 主站: http://beiklive.top
-  - 学习笔记: 
-    - Python:
-      - Python笔记: docs/Python/python.md
-    - C++:
-      - C++笔记: docs/C++/c++.md
-      - QT笔记: docs/C++/QT.md
-      - 设计模式: docs/C++/design-patterns.md
-      - 30天编写C++服务器: docs/C++/30daymakecppserver.md
-      - 线程池: docs/C++/ThreadPool.md
-      - 小游戏: docs/C++/games.md
-    - Rust:
-      - Rust笔记: docs/Rust/Rust.md
-    - 前端:
-      - NodeJs笔记: docs/Nodejs/nodejs.md
-      - PM2使用: docs/Nodejs/pm2.md                
-      - VUE笔记: docs/VUE/VUE.md                                           
-    - Linux:
-      - ubuntu相关: docs/Linux/ubuntu.md                 
-      - Linux系统: docs/Linux/linux系统.md
-      - 服务搭建: docs/Linux/Server.md
-      - 树莓派: docs/Linux/树莓派.md
-    - 夏集八学:
-      - NGINX: docs/other/nginx.md
-      - xmake: docs/other/xmake.md
-      - 正则表达式: docs/other/regx.md
-      - WSL管理器: docs/other/wsl.md
+  - Python:
+    - 📒代码片段: docs/Python/snippet.md
+    - 📌Python笔记: docs/Python/python.md
+  - C/C++/QT:
+    - 📒代码片段: docs/C++/snippet.md
+    - 📌C/C++笔记: docs/C++/c++.md
+    - 📌QT笔记: docs/C++/QT.md
+    - 📌30天编写C++服务器: docs/C++/30daymakecppserver.md
+    - 📌线程池: docs/C++/ThreadPool.md
+    - 📌控制台游戏: docs/C++/games.md
+  - 前端:
+    - 📌NodeJs笔记: docs/Nodejs/nodejs.md
+    - 📌VUE笔记: docs/VUE/VUE.md                                           
+  - Linux:
+    - 📌ubuntu相关: docs/Linux/ubuntu.md                 
+    - 📌Linux系统: docs/Linux/linux系统.md
+    - 📌服务搭建: docs/Linux/Server.md
+    - 📌树莓派: docs/Linux/树莓派.md
+  - 夏集八学:
+    - 📌Nginx: docs/other/nginx.md
+    - 📌PM2管理器: docs/Nodejs/pm2.md                
+    - 📌Xmake: docs/other/xmake.md
+    - 📌正则表达式: docs/other/regx.md
+  - Gayhub项目收集:
+    - 📌Gayhub好项目: docs/other/gayhub.md
+  - 📸零碎暂存: docs/temp.md
   - 关于: about.md
-  - 帮助: 
-    - 文档语法: help.md
+  - 留言板: dissusion.md
 
 theme:
   name: material

@@ -2,6 +2,21 @@
 comments: true
 ---
 
+## Linux安装高版本gcc,g++
+### 添加相应的源
+```bash
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+```
+### 更新软件源
+```bash
+sudo apt-get update
+```
+### 安装
+```bash
+sudo apt-get install gcc-11 g++-11
+```
+
+
 ## IO多路复用（select poll  epoll）
 
 ### select
@@ -137,8 +152,8 @@ e)其他情况...
 ## 零拷贝
 [https://www.xiaolincoding.com/os/8_network_system/zero_copy.html](https://www.xiaolincoding.com/os/8_network_system/zero_copy.html)
 
-## 终端文字颜色
-
+## 终端特殊显示
+### 颜色修改
 !!! note ""
 	使用： `print("\033[91mThis is red text\033[0m")`
 	重置代码为 `\033[0m`
@@ -163,7 +178,12 @@ e)其他情况...
 | Cyan | \033[96m | \033[106m |
 | White | \033[97m | \033[107m |
 
-## 终端清空
+### 终端清空
 ```C++
 std::cout << "\033c";
+```
+
+## mac安装brew
+```bash
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```

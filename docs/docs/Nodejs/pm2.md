@@ -77,3 +77,9 @@ $ pm2 start app.js -i max -- -a 23 #在--之后给 app.js 传递参数
 
 $ pm2 start app.js -i max -e err.log -o out.log #启动 并 生成一个配置文件
 ```
+
+
+## 启动python程序
+```bash
+pm2 start GetAndEmail.py --interpreter python3
+```
