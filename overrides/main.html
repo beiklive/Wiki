@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% block scripts %}
-<div class="sakana-box"></div>
-<script src="https://cdn.jsdelivr.net/npm/sakana"></script>
+<div id="sakana-widget" style="position: fixed;bottom: 20px;right:40px;"></div>
 <script>
-Sakana.init({
-  el:         '.sakana-box',     // 启动元素 node 或 选择器
-  scale:      .5,                // 缩放倍数
-  canSwitchCharacter: true,      // 允许换角色
-});
+  function initSakanaWidget() {
+    new SakanaWidget({ autoFit: true })
+      .setState({ i: 0.001, d: 1 })
+      .mount("#sakana-widget");
+  }
 </script>
+<script
+  async
+  onload="initSakanaWidget()"
+  src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.2/lib/sakana.min.js"
+></script>
+
   <!-- Add scripts that need to run before here -->
   {{ super() }}
   <!-- Add scripts that need to run afterwards here -->
