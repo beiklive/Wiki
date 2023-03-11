@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block scripts %}
-<div id="sakana-widget" style="position: fixed;bottom: 20px;right:40px;"></div>
+
+
+  <!-- Add scripts that need to run before here -->
+  {{ super() }}
+  <!-- Add scripts that need to run afterwards here -->
+{% endblock %}
+
+{% block libs %}
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <div id="sakana-widget" style="position: fixed;bottom: 20px;right:40px;"></div>
 <script>
   function initSakanaWidget() {
     new SakanaWidget({ autoFit: true })
@@ -13,20 +22,13 @@
   onload="initSakanaWidget()"
   src="https://cdn.jsdelivr.net/npm/sakana-widget@2.2.2/lib/sakana.min.js"
 ></script>
-
-  <!-- Add scripts that need to run before here -->
-  {{ super() }}
-  <!-- Add scripts that need to run afterwards here -->
-{% endblock %}
-
-{% block libs %}
-  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   {{ super() }}
 {% endblock %}
 
 {% block content %}
   {{ super() }}
   {% if page.meta.comments %}
+  
     <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
     <!-- Insert generated code here -->
 <script src="https://giscus.app/client.js"
