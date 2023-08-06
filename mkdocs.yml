@@ -19,7 +19,7 @@ nav:
     - 📒代码片段: docs/C++/snippet.md
     - 📌C/C++笔记: docs/C++/c++.md
     - 📌QT笔记: docs/C++/QT.md
-    - 📌QT笔记: docs/C++/QT QML.md
+    - 📌QML笔记: docs/C++/QT QML.md
     - 📌30天编写C++服务器: docs/C++/30daymakecppserver.md
     - 📌线程池: docs/C++/ThreadPool.md
     - 📌控制台游戏: docs/C++/games.md
