@@ -34,6 +34,57 @@ Categories=Application; # 分类
 
 
 
+## Samba配置
+
+### 安装
+
+```bash
+sudo apt-get install samba samba-common
+```
+
+
+
+### 设置共享目录
+
+```bash
+mkdir /home/beiklive/share
+sudo chmod 777 /home/beiklive/share
+```
+
+### 添加用户
+
+```bash
+sudo smbpasswd -a beiklive
+```
+
+### 修改配置文件
+
+```bash
+sudo vim /etc/samba/smb.conf
+```
+
+尾部添加
+
+```
+[share]
+comment = share folder
+browseable = yes
+path = /home/beiklive/share
+create mask = 0700
+directory mask = 0700
+valid users = beiklive
+force user = beiklive
+force group = beiklive
+public = yes
+available = yes
+writable = yes
+```
+
+### 重启
+
+```bash
+sudo service smbd restart
+```
 
 
 

@@ -27,9 +27,9 @@ nav:
     - 📌NodeJs笔记: docs/Nodejs/nodejs.md
     - 📌VUE笔记: docs/VUE/VUE.md                                           
   - Linux:
+    - 📌服务器相关: docs/Linux/Server.md
     - 📌ubuntu相关: docs/Linux/ubuntu.md                 
     - 📌Linux系统: docs/Linux/linux系统.md
-    - 📌服务搭建: docs/Linux/Server.md
     - 📌树莓派: docs/Linux/树莓派.md
   - 夏集八学:
     - 📌Nginx: docs/other/nginx.md

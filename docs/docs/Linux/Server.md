@@ -76,55 +76,40 @@ tar -xvf code-server-3.10.2-linux-amd64.tar.gz
 nohup ./code-server --port 8888 --host 0.0.0.0 --auth password > ser.log 2>&1 &
 ```
 
+## ZFile搭建
 
-## Samba配置
+项目地址： [https://docs.zfile.vip/](https://docs.zfile.vip/)
 
-### 安装
-
-```bash
-sudo apt-get install samba samba-common
+部署
+```shell
+export ZFILE_INSTALL_PATH=~/zfile                        # 声明安装到的路径
+mkdir -p $ZFILE_INSTALL_PATH && cd $ZFILE_INSTALL_PATH   # 创建文件夹并进入
+wget --no-check-certificate https://c.jun6.net/ZFILE/zfile-release.war          # 下载 zfile 最新版
+unzip zfile-release.war && rm -rf zfile-release.war      # 解压并删除压缩包
+chmod +x $ZFILE_INSTALL_PATH/bin/*.sh     
 ```
 
-
-
-### 设置共享目录
-
-```bash
-mkdir /home/beiklive/share
-sudo chmod 777 /home/beiklive/share
+启动
+```shell
+~/zfile/bin/start.sh       # 启动
 ```
 
-### 添加用户
+更新
+```shell
+~/zfile/bin/stop.sh                                                 # 停止程序
+rm -rf ~/zfile                                                      # 删除安装文件夹
 
-```bash
-sudo smbpasswd -a beiklive
+# 重新下载安装最新版
+export ZFILE_INSTALL_PATH=~/zfile                                   # 声明安装到的路径
+mkdir -p $ZFILE_INSTALL_PATH && cd $ZFILE_INSTALL_PATH              # 创建文件夹并进入
+wget --no-check-certificate https://c.jun6.net/ZFILE/zfile-release.war                     # 下载 zfile 最新版
+unzip zfile-release.war && rm -rf zfile-release.war                 # 解压并删除压缩包
+chmod +x $ZFILE_INSTALL_PATH/bin/*.sh                               # 授权启动停止脚本
+
+~/zfile/bin/start.sh                                                # 启动项目
 ```
 
-### 修改配置文件
-
-```bash
-sudo vim /etc/samba/smb.conf
-```
-
-尾部添加
-
-```
-[share]
-comment = share folder
-browseable = yes
-path = /home/beiklive/share
-create mask = 0700
-directory mask = 0700
-valid users = beiklive
-force user = beiklive
-force group = beiklive
-public = yes
-available = yes
-writable = yes
-```
-
-### 重启
-
-```bash
-sudo service smbd restart
+配置文件
+```shell
+~/zfile/WEB-INF/classes/application.properties   # 端口号在这里修改
 ```
