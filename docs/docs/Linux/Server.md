@@ -113,3 +113,106 @@ chmod +x $ZFILE_INSTALL_PATH/bin/*.sh                               # 授权启�
 ```shell
 ~/zfile/WEB-INF/classes/application.properties   # 端口号在这里修改
 ```
+
+
+
+## Mysql安装配置
+
+#### 卸载
+
+```bash
+sudo apt purge mysql-*
+sudo rm -r /etc/mysql
+sudo rm -r /var/lib/mysql
+sudo apt autoremove
+sudo apt autoclean
+```
+
+#### 安装
+
+```bash
+sudo apt-get update #更新软件源
+sudo apt-get install mysql-server -y
+sudo apt install mysql-client -y
+sudo apt install libmysqlclient-dev -y
+```
+
+保证以上步骤无报错
+
+#### 检查是否安装成功
+
+```bash
+ps -ef | grep mysql 
+```
+
+![image-20231005070317079](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070317079.png)
+
+#### 使用默认账户登录
+
+```bash
+sudo cat /etc/mysql/debian.cnf
+```
+
+![image-20231005070450375](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070450375.png)
+
+```bash
+mysql -u debian-sys-maint -p
+```
+
+> 如果登录报错
+>
+> ![image-20231005070635225](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070635225.png)
+>
+> ##### 1.设置允许无密码登录
+>
+> ```bash
+> sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+> ```
+>
+> 在 `[mysqld]`下添加
+>
+> ```
+> skip-grant-tables
+> ```
+>
+> ![image-20231005070846350](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070846350.png)
+>
+> ##### 2.重启 MySQL
+>
+> ```bash
+> service mysql restart
+> ```
+>
+> ##### 3.登录 Mysql
+>
+> ```bash
+> mysql -u root -p   # 输入密码时直接回车就行
+> ```
+>
+> ##### 4.重新设置root账户密码
+>
+> ```mysql
+> # 以下都是在 mysql 的命令行中执行
+> use mysql;
+> flush privileges;
+> UPDATE user SET authentication_string='' WHERE user='root';
+> flush privileges;
+> alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+> quit;
+> ```
+>
+> ##### 5.重启mysql
+>
+> 首先删除第一步中加入到 mysqld.cnf的那条语句
+>
+> 然后重启 mysql 服务
+>
+> ```bash
+> service mysql restart
+> ```
+>
+> ##### 6.使用修改后的账号密码登录
+>
+> ```bash
+> mysql -u root -p
+> ```
