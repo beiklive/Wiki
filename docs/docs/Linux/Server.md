@@ -145,7 +145,7 @@ sudo apt install libmysqlclient-dev -y
 ps -ef | grep mysql 
 ```
 
-![image-20231005070317079](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070317079.png)
+![image-20231005070317079](./img/image-20231005070317079.png)
 
 #### 使用默认账户登录
 
@@ -153,7 +153,7 @@ ps -ef | grep mysql
 sudo cat /etc/mysql/debian.cnf
 ```
 
-![image-20231005070450375](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070450375.png)
+![image-20231005070450375](./img/image-20231005070450375.png)
 
 ```bash
 mysql -u debian-sys-maint -p
@@ -161,7 +161,7 @@ mysql -u debian-sys-maint -p
 
 > 如果登录报错
 >
-> ![image-20231005070635225](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070635225.png)
+> ![image-20231005070635225](./img/image-20231005070635225.png)
 >
 > ##### 1.设置允许无密码登录
 >
@@ -175,7 +175,7 @@ mysql -u debian-sys-maint -p
 > skip-grant-tables
 > ```
 >
-> ![image-20231005070846350](/Users/beiklive/Work/Github/Wiki/docs/docs/Linux/img/image-20231005070846350.png)
+> ![image-20231005070846350](./img/image-20231005070846350.png)
 >
 > ##### 2.重启 MySQL
 >
