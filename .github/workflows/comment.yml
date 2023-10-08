@@ -1,7 +1,7 @@
 name: BlogComment
 on:
-  discussion_comment:
-    types: created
+  issues:
+    types: [opened]
 jobs:
   blog:
     name: BlogComment
