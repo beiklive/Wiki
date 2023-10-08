@@ -21,7 +21,7 @@ jobs:
       - name: Change Working Directory
         run: cd python
       - name: execute python script
-        run: python giscusmonitor.py
+        run: python python/giscusmonitor.py
       - name: Commit files
         id: commit-files
         run: |
