@@ -9,6 +9,8 @@ jobs:
     name: BlogComment
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Check Issue Content
         id: issue-content
         run: |
@@ -21,7 +23,10 @@ jobs:
       - name: Update Gayhub.md
         if: steps.issue-content.outputs.add_text == 'true'
         run: |
+          cd /home/runner/work/Wiki/Wiki/
           echo "${{ github.event.issue.body }}" >> ./docs/docs/other/gayhub.md
+      - name: Change Working Directory
+        run: cd /home/runner/work/Wiki/Wiki/  # 更改为您想要执行命令的目录路径
       - name: Commit files
         if: steps.issue-content.outputs.add_text == 'true'
         id: commit-files
