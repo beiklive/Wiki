@@ -12,7 +12,7 @@ jobs:
       - name: Check Issue Content
         id: issue-content
         run: |
-          issue_content=$(echo "${{ github.event.issue.body }}" | tr -d '\n' | tr -d '\r' | tr -d '\t')
+          issue_content=$(echo "${{ github.event.issue.title }}" | tr -d '\n' | tr -d '\r' | tr -d '\t')
           if [[ "$issue_content" == *"Add Github Project"* ]]; then
             echo "::set-output name=add_text::true"
           else
