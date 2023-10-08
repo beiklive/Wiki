@@ -1,5 +1,5 @@
 ---
-name: gayhub.md action
-about: 按照模版格式填写项目，action会自动集成到 https://beiklive.github.io/Wiki/docs/other/gayhub/
+name: -- Add Github Project --
+about: 标题使用 -- Add Github Project --  填写完成后action会自动集成到 https://beiklive.github.io/Wiki/docs/other/gayhub/
 ---
-| 项目名 | 项目地址 | 项目简介 |
+| 修改为项目名 | 修改为项目地址 | 修改为项目简介 |
