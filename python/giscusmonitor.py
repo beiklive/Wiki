@@ -2,6 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import subprocess
 import time
+import os
+
+current_directory = os.getcwd()
+print("当前工作目录的路径是:", current_directory)
 
 MarkDownText = '''
 ---
@@ -88,6 +92,6 @@ def append_text_to_file(file_path, text_to_append):
 if __name__ == "__main__":
     res = GetFormatComment()
     if None != res:
-        append_text_to_file("../docs/docs/other/gayhub.md", res)
+        append_text_to_file("/home/runner/work/Wiki/docs/docs/other/gayhub.md", res)
         MarkDownText += "\n" + res
         print(MarkDownText)
