@@ -92,6 +92,6 @@ def append_text_to_file(file_path, text_to_append):
 if __name__ == "__main__":
     res = GetFormatComment()
     if None != res:
-        append_text_to_file("/home/runner/work/Wiki/docs/docs/other/gayhub.md", res)
+        append_text_to_file("/home/runner/work/Wiki/Wiki/docs/docs/other/gayhub.md", res)
         MarkDownText += "\n" + res
         print(MarkDownText)
