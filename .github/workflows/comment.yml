@@ -1,10 +1,8 @@
 name: BlogComment
 on:
-  push:
-    branches: ["master"]
   workflow_dispatch:
-  # schedule:
-  #   - cron: "0 20 * * *" # 注意，GitHub Action的时区为UTC+0，与北京时间（UTC+8）存在时差，所以需要换算下时间。
+  schedule:
+    - cron: "0 20 * * *" # 注意，GitHub Action的时区为UTC+0，与北京时间（UTC+8）存在时差，所以需要换算下时间。
 jobs:
   blog:
     name: BlogComment
@@ -30,12 +28,13 @@ jobs:
             git config --local user.name "github-actions[bot]"
             git add -A
             git commit -m "docs: update blog"
+            git push
           else
             echo "No changes detected"
           fi
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: ${{ github.ref }}
