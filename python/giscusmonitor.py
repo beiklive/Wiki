@@ -10,7 +10,6 @@ comments: true
 
 | 项目名 | 项目地址 | 简介 |
 | :--- | :--- | :--- |
-
 '''
 
 
@@ -71,9 +70,24 @@ def GetFormatComment():
         print("尝试多次失败,下次再试吧")
     return None
 
+def append_text_to_file(file_path, text_to_append):
+    try:
+        # 打开文件以读取内容，删除尾部的换行符
+        with open(file_path, 'r') as file:
+            existing_content = file.read().rstrip('\n')
+        
+        # 追加新文本并写回文件
+        with open(file_path, 'w') as file:
+            file.write(existing_content + '\n' + text_to_append)
+        
+        print("文本已成功追加到文件末尾。")
+    except Exception as e:
+        print(f"发生错误：{str(e)}")
+
 
 if __name__ == "__main__":
     res = GetFormatComment()
     if None != res:
-        MarkDownText += res
+        append_text_to_file("../docs/docs/other/gayhub.md", res)
+        MarkDownText += "\n" + res
         print(MarkDownText)
