@@ -1,25 +1,29 @@
 name: BlogComment
 on:
   issues:
-    types: [opened]
+    types:
+      - opened
+
 jobs:
   blog:
     name: BlogComment
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - name: Install python env
-        run:  pip install requests && pip install beautifulsoup4
-      - name: Change Working Directory
-        run: cd python
-      - name: execute python script
-        run: python python/giscusmonitor.py
+      - name: Check Issue Content
+        id: issue-content
+        run: |
+          issue_content=$(echo "${{ github.event.issue.body }}" | tr -d '\n' | tr -d '\r' | tr -d '\t')
+          if [[ "$issue_content" == *"Add Github Project"* ]]; then
+            echo "::set-output name=add_text::true"
+          else
+            echo "::set-output name=add_text::false"
+          fi
+      - name: Update Gayhub.md
+        if: steps.issue-content.outputs.add_text == 'true'
+        run: |
+          echo "${{ github.event.issue.body }}" >> ./docs/docs/other/gayhub.md
       - name: Commit files
+        if: steps.issue-content.outputs.add_text == 'true'
         id: commit-files
         run: |
           if [ -n "$(git status --porcelain ./docs/docs/other/gayhub.md)" ]; then
@@ -31,9 +35,15 @@ jobs:
           else
             echo "No changes detected"
           fi
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   if: ${{ steps.commit-files.outputs.hasChange == 'true' }}
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ github.ref }}
+      - name: Close Issue
+        if: steps.issue-content.outputs.add_text == 'true'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            })
