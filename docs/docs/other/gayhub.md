@@ -9,3 +9,4 @@ comments: true
 | VNote | https://github.com/vnotex/vnote | 使用QT编写，代码有注释。基本可以代替typora |
 | project name | project address | add your idea | 
 | HelloActions-Qt | https://github.com/jaredtao/HelloActions-Qt | QT的git action自动编译模板 |
+| HelloActions-Qt | https://github.com/jaredtao/HelloActions-Qt | QT的git action自动编译模板 |
