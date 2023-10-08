@@ -24,6 +24,16 @@ jobs:
         if: steps.issue-content.outputs.add_text == 'true'
         run: |
           cd /home/runner/work/Wiki/Wiki/
+          file_path="./docs/docs/other/gayhub.md"
+          if [ -f "$file_path" ]; then
+            last_line=$(tail -n 1 "$file_path")
+            if [ "$last_line" == "" ]; then
+              sed -i '$d' "$file_path"
+            fi
+            echo "尾部换行已删除。"
+          else
+            echo "文件 $file_path 不存在。"
+          fi
           echo "${{ github.event.issue.body }}" >> ./docs/docs/other/gayhub.md
       - name: Change Working Directory
         run: cd /home/runner/work/Wiki/Wiki/  # 更改为您想要执行命令的目录路径
