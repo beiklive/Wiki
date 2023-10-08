@@ -35,20 +35,8 @@ jobs:
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
             git add -A
-            git commit -m "docs: update blog"
+            git commit -m "close ${{ github.event.issue.id }} \n${{ github.event.issue.title }}\n${{ github.event.issue.body }}"
             git push
           else
             echo "No changes detected"
           fi
-      - name: Close Issue
-        if: steps.issue-content.outputs.add_text == 'true'
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.issues.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              state: 'closed'
-            })
