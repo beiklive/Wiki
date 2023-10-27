@@ -34,7 +34,7 @@ jobs:
           else
             echo "文件 $file_path 不存在。"
           fi
-          echo "\n${{ github.event.issue.body }}" >> ./docs/docs/other/gayhub.md
+          echo "${{ github.event.issue.body }}" >> ./docs/docs/other/gayhub.md
       - name: Change Working Directory
         run: cd /home/runner/work/Wiki/Wiki/  # 更改为您想要执行命令的目录路径
       - name: Commit files
