@@ -9,5 +9,5 @@ comments: true
 | VNote | https://github.com/vnotex/vnote | 使用QT编写，代码有注释。基本可以代替typora |
 | awesome-mac | https://github.com/jaywcjlove/awesome-mac | 一些mac应用推荐 |
 | chatgpt-mirai-qq-bot | https://github.com/lss233/chatgpt-mirai-qq-bot | qq用的gpt机器人 |
-\n| typora_plugin | https://github.com/obgnail/typora_plugin | 一些typora的插件 |
-\n| **barrier** | https://github.com/debauchee/barrier | 一套跨操作系统键盘鼠标控制多台电脑的工具 |
+| typora_plugin | https://github.com/obgnail/typora_plugin | 一些typora的插件 |
+| **barrier** | https://github.com/debauchee/barrier | 一套跨操作系统键盘鼠标控制多台电脑的工具 |
