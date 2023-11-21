@@ -11,5 +11,5 @@ comments: true
 | chatgpt-mirai-qq-bot | https://github.com/lss233/chatgpt-mirai-qq-bot | qq用的gpt机器人 |
 | typora_plugin | https://github.com/obgnail/typora_plugin | 一些typora的插件 |
 | **barrier** | https://github.com/debauchee/barrier | 一套跨操作系统键盘鼠标控制多台电脑的工具 |
-| 修改为项目名 | https://confluence.asux.aptiv.com/pages/viewpage.action?pageId=365737858 | 使用AI将网页截图转为网页代码 |
+| screenshot-to-code | https://github.com/abi/screenshot-to-code | 使用AI将网页截图转为网页代码 |
 
