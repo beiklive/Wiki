@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "314cda1c63a7eeba",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5e3c4e597a6ed4c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e28718ae89054bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "白板/未命名.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9bf45a65572efa43",
+    "type": "split",
+    "children": [
+      {
+        "id": "1193c3acad54c3d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c3b871b8afeb5ff0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bcb1fb7f4ecd0861",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0a5730b4cc50a409",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9fc46e5c65ccb73a",
+    "type": "split",
+    "children": [
+      {
+        "id": "00f9be2416696ae5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bc393173036246b8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "白板/未命名.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b42c7adeff2d194c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "白板/未命名.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "07e3c42375c8256b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c000bff5ffb16230",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "白板/未命名.md"
+              }
+            }
+          },
+          {
+            "id": "96817b9fb15711b9",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "3bb3a3222f4a9505",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 722.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
+    }
+  },
+  "active": "7e28718ae89054bd",
+  "lastOpenFiles": [
+    "Excalidraw/Drawing 2024-04-29 16.52.30.excalidraw.md",
+    "白板/未命名.md",
+    "Excalidraw",
+    "笔记/编程/C-C++/代码片段.md",
+    "笔记/编程/python/代码片段.md",
+    "笔记/编程/python/配置和换源.md",
+    "笔记/工具/Git/Git小抄.md",
+    "笔记/工具/Linux/Ubuntu折腾.md",
+    "笔记/工具/xmake/xmake.md",
+    "笔记/工具/vscode/用户代码片段.md",
+    "日记/未命名.md",
+    "笔记/工具/xmake",
+    "笔记/工具/未命名.md",
+    "笔记/折腾/img/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA56u55Y-26Z2SbHZ5ZQ==,size_20,color_FFFFFF,t_70,g_se,x_16.png",
+    "笔记/折腾/img/image-20231005070846350.png",
+    "笔记/折腾/img/image-20231005070635225.png",
+    "笔记/折腾/img/image-20231005070450375.png",
+    "笔记/折腾/img/image-20231005070317079.png",
+    "笔记/折腾/img/image-20220823234010013.png",
+    "笔记/折腾/img/image-20220823233957453.png",
+    "笔记/折腾/img/image-20220823233842447.png",
+    "笔记/折腾/img/image-20220823233549532.png",
+    "笔记/折腾/img/image-20220823233204655.png",
+    "笔记/折腾/树莓派.md",
+    "笔记/折腾/img",
+    "笔记/折腾",
+    "笔记/工具/Git/Git操作笔记.md",
+    "笔记/编程/C-C++/img",
+    "折腾/树莓派.md",
+    "折腾/img",
+    "笔记/工具/Linux/img",
+    "笔记/编程/QT/QT笔记.md",
+    "笔记/工具/Linux",
+    "笔记/编程/QT/QML笔记.md",
+    "模板/placeholder.md",
+    "笔记/编程/QT",
+    "笔记/编程/C-C++/未命名.md",
+    "模板/wiki模板（开启评论）.md",
+    "模板",
+    "流程图和思维导图/test.md",
+    "流程图和思维导图/STL空间配置器流程图.excalidraw.md",
+    "博客/笔记/工具/Git/Git操作笔记.md",
+    "博客/笔记/工具/Git/Git 小抄.md",
+    "博客/笔记/工具/vscode/代码片段.md",
+    "博客/流程图和思维导图/STL空间配置器流程图.excalidraw.md",
+    "博客/流程图和思维导图/test.md",
+    "第一白板.canvas",
+    "未命名 1.canvas"
+  ]
+}

@@ -6,41 +6,35 @@ copyright: >
 
 site_url: https://wiki.beiklive.top/
 repo_url: https://github.com/beiklive/Wiki
+edit_uri_template: '{path_noext}/_edit'
 site_description: Blog for beiklive
 site_author: beiklive
 
 nav:
   - 首页: index.md
   - 主站: http://beiklive.top
-  - Python:
-    - 📒代码片段: docs/Python/snippet.md
-    - 📌Python笔记: docs/Python/python.md
-  - C/C++/QT:
-    - 📒代码片段: docs/C++/snippet.md
-    - 📌C/C++笔记: docs/C++/c++.md
-    - 📌QT笔记: docs/C++/QT.md
-    - 📌QML笔记: docs/C++/QT QML.md
-    - 📌30天编写C++服务器: docs/C++/30daymakecppserver.md
-    - 📌线程池: docs/C++/ThreadPool.md
-    - 📌控制台游戏: docs/C++/games.md
-  - 前端:
-    - 📌NodeJs笔记: docs/Nodejs/nodejs.md
-    - 📌VUE笔记: docs/VUE/VUE.md                                           
-  - Linux:
-    - 📌服务器相关: docs/Linux/Server.md
-    - 📌ubuntu相关: docs/Linux/ubuntu.md                 
-    - 📌Linux系统: docs/Linux/linux系统.md
-    - 📌树莓派: docs/Linux/树莓派.md
-  - 夏集八学:
-    - 📌Nginx: docs/other/nginx.md
-    - 📌PM2管理器: docs/Nodejs/pm2.md                
-    - 📌Xmake: docs/other/xmake.md
-    - 📌正则表达式: docs/other/regx.md
-  - Gayhub项目收集:
-    - 📌Gayhub好项目: docs/other/gayhub.md
-  - 📸零碎暂存: docs/temp.md
+  - 编程:
+    - C/C++:
+      - 代码片段: beiklive/笔记/编程/C-C++/代码片段.md
+    - Python:
+      - 代码片段: beiklive/笔记/编程/python/代码片段.md
+      - 配置和换源: beiklive/笔记/编程/python/配置和换源.md
+    - QT:
+      - QML笔记: beiklive/笔记/编程/QT/QML笔记.md                                         
+      - QT笔记: beiklive/笔记/编程/QT/QT笔记.md
+  - 工具:
+    - Git: 
+      - Git小抄: beiklive/笔记/工具/Git/Git小抄.md     
+    - Linux: 
+      - Ubuntu: beiklive/笔记/工具/Linux/Ubuntu折腾.md     
+    - vscode: 
+      - 用户代码片段: beiklive/笔记/工具/vscode/用户代码片段.md
+    - xmake: 
+      - xmake: beiklive/笔记/工具/xmake/xmake.md
+  - 折腾:
+    - 树莓派: beiklive/笔记/折腾/树莓派.md
+  - 拾贝沙滩: dissusion.md
   - 关于: about.md
-  - 留言板: dissusion.md
 
 theme:
   name: material

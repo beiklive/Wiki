@@ -1,3 +1,6 @@
 # 个人知识库
 
 ![Alt](https://repobeats.axiom.co/api/embed/d91e49f499d8ddc639f44339bcba94571b927360.svg "Repobeats analytics image")
+
+
+内部集成 obsidian
