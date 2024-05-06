@@ -11,28 +11,11 @@
             "id": "7e28718ae89054bd",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "docs/beiklive/.obsidian/workspace.json",
-                "staged": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ca8fda04b566c46c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "dbe8a61fb9db7dfd",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "笔记/收集/书籍文章.md",
-                "mode": "preview",
-                "source": false
+                "mode": "source",
+                "source": true
               }
             }
           }
@@ -102,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "笔记/收集/书籍文章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "笔记/收集/书籍文章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "笔记/收集/书籍文章.md"
+              }
             }
           },
           {
@@ -178,6 +165,8 @@
   },
   "active": "7e28718ae89054bd",
   "lastOpenFiles": [
+    "笔记/工具/Linux/Ubuntu折腾.md",
+    "笔记/工具/Git/Git小抄.md",
     "笔记/收集/书籍文章.md",
     "笔记/收集/资源.md",
     "笔记/收集/asserts/Pasted image 20240506093237.png",
@@ -189,8 +178,6 @@
     "笔记/编程/C-C++/代码片段.md",
     "笔记/编程/python/代码片段.md",
     "笔记/编程/python/配置和换源.md",
-    "笔记/工具/Git/Git小抄.md",
-    "笔记/工具/Linux/Ubuntu折腾.md",
     "笔记/工具/xmake/xmake.md",
     "笔记/工具/vscode/用户代码片段.md",
     "日记/未命名.md",

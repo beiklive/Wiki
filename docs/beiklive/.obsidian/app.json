@@ -4,5 +4,6 @@
   "newLinkFormat": "relative",
   "newFileLocation": "current",
   "alwaysUpdateLinks": true,
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "useMarkdownLinks": true
 }
