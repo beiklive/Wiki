@@ -13,9 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/收集/书籍文章.md",
+                "file": "笔记/折腾/Obsidian.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -64,12 +64,23 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "c000bff5ffb16230",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "笔记/折腾/Obsidian.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 258.51103591918945
   },
   "right": {
     "id": "9fc46e5c65ccb73a",
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记/收集/书籍文章.md",
+                "file": "笔记/折腾/Obsidian.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "笔记/收集/书籍文章.md",
+                "file": "笔记/折腾/Obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -116,16 +127,6 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "c000bff5ffb16230",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "笔记/收集/书籍文章.md"
               }
             }
           },
@@ -146,7 +147,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -163,12 +164,20 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "7e28718ae89054bd",
+  "active": "c000bff5ffb16230",
   "lastOpenFiles": [
-    "笔记/工具/Linux/Ubuntu折腾.md",
-    "笔记/工具/Git/Git小抄.md",
-    "笔记/收集/书籍文章.md",
+    "笔记/折腾/asserts/Pasted image 20240506095628.png",
+    "笔记/折腾/asserts/Pasted image 20240506095623.png",
+    "笔记/折腾/asserts/Pasted image 20240506095552.png",
+    "笔记/折腾/asserts/Pasted image 20240506095340.png",
+    "笔记/折腾/asserts/Pasted image 20240506095025.png",
+    "笔记/折腾/Obsidian.md",
+    "笔记/折腾/asserts/Pasted image 20240506094757.png",
+    "笔记/折腾/asserts",
     "笔记/收集/资源.md",
+    "笔记/工具/Linux/Ubuntu.md",
+    "笔记/收集/书籍文章.md",
+    "笔记/工具/Git/Git小抄.md",
     "笔记/收集/asserts/Pasted image 20240506093237.png",
     "笔记/收集/asserts",
     "白板/未命名.md",
@@ -187,11 +196,6 @@
     "笔记/折腾/img/image-20231005070846350.png",
     "笔记/折腾/img/image-20231005070635225.png",
     "笔记/折腾/img/image-20231005070450375.png",
-    "笔记/折腾/img/image-20231005070317079.png",
-    "笔记/折腾/img/image-20220823234010013.png",
-    "笔记/折腾/img/image-20220823233957453.png",
-    "笔记/折腾/img/image-20220823233842447.png",
-    "笔记/折腾/img/image-20220823233549532.png",
     "笔记/折腾/树莓派.md",
     "笔记/折腾/img",
     "笔记/折腾",
@@ -201,7 +205,6 @@
     "折腾/img",
     "笔记/工具/Linux/img",
     "笔记/编程/QT/QT笔记.md",
-    "笔记/工具/Linux",
     "笔记/编程/QT/QML笔记.md",
     "模板/placeholder.md",
     "笔记/编程/C-C++/未命名.md",
@@ -209,7 +212,6 @@
     "流程图和思维导图/test.md",
     "流程图和思维导图/STL空间配置器流程图.excalidraw.md",
     "博客/笔记/工具/Git/Git操作笔记.md",
-    "博客/笔记/工具/Git/Git 小抄.md",
     "第一白板.canvas",
     "未命名 1.canvas"
   ]
