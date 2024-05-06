@@ -41,7 +41,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install mkdocs and dependences
-        run:  pip install mkdocs && pip install mkdocs-material && pip install mkdocs-git-revision-date-localized-plugin && pip install pillow cairosvg requests
+        run:  pip install mkdocs && pip install mkdocs-material && pip install mkdocs-git-revision-date-localized-plugin && pip install pillow cairosvg
       - name: Setup Pages
         run: mkdocs build --clean
       - name: Upload artifact
@@ -53,10 +53,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
       - name: Send GET Request to Server
-        run: |
-          python - <<EOF
-          import requests
-
-          response = requests.get('http://beiklive.top:10666/WikiUpdate')
-          print('Response from API:', response.text)
-          EOF
+        run: curl -X GET http://beiklive.top:10666/WikiUpdate
