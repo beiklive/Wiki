@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "3991ecc4a0660845",
+        "id": "0484a218ed8dd3a3",
         "type": "tabs",
         "children": [
           {
-            "id": "5974d754e63a6eb9",
+            "id": "bbd1afa231531345",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "笔记/编程/python/代码片段.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -66,7 +70,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "笔记/编程/python/代码片段.md"
+              }
             }
           }
         ]
@@ -89,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "笔记/编程/python/代码片段.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "笔记/编程/python/代码片段.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,10 +163,26 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "3bb3a3222f4a9505",
+  "active": "bbd1afa231531345",
   "lastOpenFiles": [
+    "日记/日记.md",
+    "笔记/ROOT.md",
+    "index.md",
+    "图片/img/32f5bbb0-4206-429a-86ad-f5d1ab91072b.jpg",
+    "图片/img/favicon.svg",
+    "图片/img/80.jpg",
+    "图片/img",
+    "图片",
     "笔记/编程/python/代码片段.md",
+    "笔记/编程/python/配置和换源.md",
+    "笔记/编程/C-C++/代码片段.md",
+    "流程图和思维导图/STL空间配置器流程图.excalidraw.md",
     "笔记/折腾/Obsidian.md",
+    "笔记/收集/资源.md",
+    "笔记/收集/书籍文章.md",
+    "笔记/工具/Linux/Ubuntu.md",
+    "笔记/工具/vscode/用户代码片段.md",
+    "笔记/工具/Git/Git小抄.md",
     "笔记/折腾/asserts/Pasted image 20240506095628.png",
     "笔记/折腾/asserts/Pasted image 20240506095623.png",
     "笔记/折腾/asserts/Pasted image 20240506095552.png",
@@ -166,42 +190,27 @@
     "笔记/折腾/asserts/Pasted image 20240506095025.png",
     "笔记/折腾/asserts/Pasted image 20240506094757.png",
     "笔记/折腾/asserts",
-    "笔记/收集/资源.md",
-    "笔记/工具/Linux/Ubuntu.md",
-    "笔记/收集/书籍文章.md",
-    "笔记/工具/Git/Git小抄.md",
     "笔记/收集/asserts/Pasted image 20240506093237.png",
     "笔记/收集/asserts",
     "白板/未命名.md",
     "笔记/收集",
     "Excalidraw/Drawing 2024-04-29 16.52.30.excalidraw.md",
     "Excalidraw",
-    "笔记/编程/C-C++/代码片段.md",
-    "笔记/编程/python/配置和换源.md",
     "笔记/工具/xmake/xmake.md",
-    "笔记/工具/vscode/用户代码片段.md",
-    "日记/未命名.md",
     "笔记/工具/xmake",
     "笔记/工具/未命名.md",
-    "笔记/折腾/img/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA56u55Y-26Z2SbHZ5ZQ==,size_20,color_FFFFFF,t_70,g_se,x_16.png",
-    "笔记/折腾/img/image-20231005070846350.png",
-    "笔记/折腾/img/image-20231005070635225.png",
     "笔记/折腾/树莓派.md",
     "笔记/折腾/img",
     "笔记/折腾",
     "笔记/工具/Git/Git操作笔记.md",
     "笔记/编程/C-C++/img",
     "折腾/树莓派.md",
-    "折腾/img",
-    "笔记/工具/Linux/img",
     "笔记/编程/QT/QT笔记.md",
     "笔记/编程/QT/QML笔记.md",
     "模板/placeholder.md",
     "笔记/编程/C-C++/未命名.md",
     "模板/wiki模板（开启评论）.md",
     "流程图和思维导图/test.md",
-    "流程图和思维导图/STL空间配置器流程图.excalidraw.md",
-    "博客/笔记/工具/Git/Git操作笔记.md",
     "第一白板.canvas",
     "未命名 1.canvas"
   ]
